@@ -1,4 +1,4 @@
-package fr.htc.test;
+package fr.htc.library.main;
 
 import java.util.ArrayList;
 import java.util.List;

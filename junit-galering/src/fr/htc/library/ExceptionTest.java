@@ -1,8 +1,10 @@
-package fr.htc.test;
+package fr.htc.library;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import fr.htc.library.main.Book;
 
 public class ExceptionTest {
 	private final String  title = "Nedjma";

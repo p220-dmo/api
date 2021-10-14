@@ -1,9 +1,9 @@
-package fr.htc.test;
+package fr.htc.library.main;
 
 public class Book {
 	private static int coteSeq = 10;
 	private String cote;
-//	private String title;
+	private String title;
 	private String author;
 	private int editionYear;
 	private Member borrower;
@@ -14,7 +14,7 @@ public class Book {
 	}
 
 	public Book(String title, String author, int editionYear) {
-//		this.title = title;
+		this.title = title;
 		this.author = author;
 		this.editionYear = editionYear;
 		this.cote = this.generateCote();
@@ -28,13 +28,13 @@ public class Book {
 
 	// *** gettes & setters
 
-//	public String getTitle() {
-//		return title;
-//	}
-//
-//	public void setTitle(String title) {
-//		this.title = title;
-//	}
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	public String getAuthor() {
 		return author;
@@ -63,10 +63,10 @@ public class Book {
 	public void setBorrower(Member borrower) {
 		this.borrower = borrower;
 	}
-//	@Override
-//	public String toString() {
-//		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", editionYear=" + editionYear + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", editionYear=" + editionYear + "]";
+	}
 
 	public boolean isAvailable() {
 		if(this.borrower == null) {

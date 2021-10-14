@@ -1,14 +1,15 @@
-package fr.htc.test;
+package fr.htc.library.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.util.Iterator;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
-import junit.framework.Assert;
+import fr.htc.library.main.Book;
 
 public class BookTest {
 	private final String  title = "Nedjma";
@@ -35,18 +36,27 @@ public class BookTest {
 //	}
 
 	@Test
+	@Ignore
 	public final void testBookStringStringInt() {
 		book = new Book(title, author, editionYear);
 		
 		 assertNotNull("should not be null", book);
-//		 assertEquals("", title, book.getTitle());
+		 assertNotNull(book.getAuthor());
+		 assertNotNull("Title should not be null", book.getTitle());
+		 assertEquals("", title, book.getTitle());
 		 assertEquals("", author, book.getAuthor());
 		 assertEquals("", editionYear, book.getEditionYear());
 		 assertEquals("", expectedCote, book.getCote());
 		 
 		 Book book1 = new Book(title, author, editionYear);
 		 assertTrue("Should increment the cote", book1.getCote().endsWith("11"));
-	
+		 
+		 for (int i = 0; i < 100; i++) {
+			new Book(title, author, editionYear);
+		}
+		 Book book112 = new Book(title, author, editionYear);
+		 assertTrue("Should increment the cote large" + book112.getCote(), book112.getCote().endsWith("112"));
+		 
 		
 	}
 
